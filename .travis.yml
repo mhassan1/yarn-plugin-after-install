@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - lts/*
+  - node
+os: linux
+arch: arm64
+env:
+  - YARN_GPG=no
+cache:
+  directories:
+    - .yarn/cache

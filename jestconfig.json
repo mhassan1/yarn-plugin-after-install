@@ -1,0 +1,17 @@
+{
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  },
+  "testRegex": "(/__tests__/.*|(\\.|/)test)\\.ts$",
+  "moduleFileExtensions": ["ts", "js"],
+  "collectCoverage": true,
+  "coverageThreshold": {
+    "global": {
+      "branches": 75,
+      "functions": 75,
+      "lines": 75,
+      "statements": 75
+    }
+  },
+  "coverageReporters": ["text"]
+}

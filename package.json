@@ -1,0 +1,58 @@
+{
+  "name": "yarn-plugin-after-install",
+  "version": "0.1.0",
+  "description": "Yarn Berry plugin that adds support for an `afterInstall` hook that runs after every `yarn install`",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhassan1/yarn-plugin-after-install.git"
+  },
+  "engines": {
+    "yarn": "^2.4.0"
+  },
+  "keywords": [
+    "yarn",
+    "berry",
+    "plugin",
+    "after",
+    "install"
+  ],
+  "author": "Marc Hassan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhassan1/yarn-plugin-after-install/issues"
+  },
+  "homepage": "https://github.com/mhassan1/yarn-plugin-after-install#readme",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "builder build plugin",
+    "prettier-check": "prettier --check .",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "yarn ts-check && yarn eslint && yarn prettier-check",
+    "eslint": "eslint --ext .ts .",
+    "ts-check": "tsc --noEmit --skipLibCheck",
+    "prepare": "yarn build",
+    "preversion": "yarn lint",
+    "version": "yarn format && yarn build && sed -Ei '' \"s/(yarn-plugin-after-install\\/).+(\\/bundles)/\\1v$npm_package_version\\2/g\" README.md && git add -A",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {
+    "@yarnpkg/builder": "^3.1.0",
+    "@yarnpkg/core": "^3.1.0",
+    "@yarnpkg/shell": "^3.1.0",
+    "clipanion": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^14.18.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-jsdoc": "^30.7.13",
+    "jest": "^26.6.3",
+    "prettier": "^2.5.0",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.5.2"
+  },
+  "packageManager": "yarn@3.1.1"
+}
