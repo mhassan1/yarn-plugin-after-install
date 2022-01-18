@@ -19,7 +19,9 @@ yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-after-
 
 afterInstall: do-something-awesome
 ```
-3. Run `yarn`.
+The script will run relative to the project directory (containing `.yarnrc.yml`).
+
+2. Run `yarn`.
 
 ## Testing
 
