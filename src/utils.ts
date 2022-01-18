@@ -18,7 +18,9 @@ export const executeAfterInstallHook = async (
       // TODO use a LightReport to write this to STDOUT, being careful to check for the `--json` flag from the user
       console.log('Running `afterInstall` hook...')
     }
-    return execute(afterInstall)
+    return execute(afterInstall, [], {
+      cwd: configuration.projectCwd || undefined
+    })
   }
   return 0
 }

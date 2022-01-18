@@ -12,6 +12,15 @@ describe.each(['yarn', 'yarn after-install'])('%s (success)', (command) => {
       expect(stdout).toBe('hi\n')
     }
   })
+
+  it('should run the `afterInstall` hook in a sub-directory with a zero exit code', () => {
+    const stdout = execSync(command, { cwd: join(cwd, 'scripts') }).toString()
+    if (command === 'yarn') {
+      expect(stdout).toMatch(/Running `afterInstall` hook\.\.\.\nhi/)
+    } else {
+      expect(stdout).toBe('hi\n')
+    }
+  })
 })
 
 describe.each(['yarn', 'yarn after-install'])('%s (failure)', (command) => {
