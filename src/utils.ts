@@ -13,7 +13,8 @@ export const executeAfterInstallHook = async (
   printPreamble: boolean
 ): Promise<number> => {
   const afterInstall = configuration.get('afterInstall')
-  if (afterInstall) {
+  const isDlx = process.argv[2] === 'dlx'
+  if (afterInstall && !isDlx) {
     if (printPreamble) {
       // TODO use a LightReport to write this to STDOUT, being careful to check for the `--json` flag from the user
       console.log('Running `afterInstall` hook...')
