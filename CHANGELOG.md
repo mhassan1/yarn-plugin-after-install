@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.1] - 2022-02-10
+[0.3.1]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.3.0...v0.3.1
+
+- Detect `yarn dlx` commands more robustly
+
 ## [0.3.0] - 2022-02-09
 [0.3.0]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.2.0...v0.3.0
 

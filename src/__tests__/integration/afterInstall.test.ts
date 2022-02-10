@@ -2,7 +2,8 @@ import { join } from 'path'
 import { executeHelper, matchHelper } from './helpers'
 
 const COMMAND_YARN = 'yarn'
-const COMMAND_YARN_DLX_HELP = 'yarn dlx --help'
+const COMMAND_YARN_DLX = 'yarn dlx echo-cli sup'
+const COMMAND_YARN_DLX_WORKSPACE = 'yarn workspace my-workspace dlx echo-cli sup'
 const COMMAND_YARN_AFTER_INSTALL = 'yarn after-install'
 
 describe.each([
@@ -14,9 +15,17 @@ describe.each([
     }
   },
   {
-    command: COMMAND_YARN_DLX_HELP,
+    command: COMMAND_YARN_DLX,
     expectations: {
-      expectedStdoutToMatch: /Run a package in a temporary environment/,
+      expectedStdoutToMatch: /sup/,
+      expectedStdoutNotToMatch: /hi there/,
+      expectedExitCode: 0
+    }
+  },
+  {
+    command: COMMAND_YARN_DLX_WORKSPACE,
+    expectations: {
+      expectedStdoutToMatch: /sup/,
       expectedStdoutNotToMatch: /hi there/,
       expectedExitCode: 0
     }
@@ -52,9 +61,17 @@ describe.each([
     }
   },
   {
-    command: COMMAND_YARN_DLX_HELP,
+    command: COMMAND_YARN_DLX,
     expectations: {
-      expectedStdoutToMatch: /Run a package in a temporary environment/,
+      expectedStdoutToMatch: /sup/,
+      expectedStderrNotToMatch: /i-dont-exist/,
+      expectedExitCode: 0
+    }
+  },
+  {
+    command: COMMAND_YARN_DLX_WORKSPACE,
+    expectations: {
+      expectedStdoutToMatch: /sup/,
       expectedStderrNotToMatch: /i-dont-exist/,
       expectedExitCode: 0
     }
