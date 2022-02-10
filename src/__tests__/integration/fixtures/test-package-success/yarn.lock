@@ -4,6 +4,12 @@
 __metadata:
   version: 5
 
+"my-workspace@workspace:my-workspace":
+  version: 0.0.0-use.local
+  resolution: "my-workspace@workspace:my-workspace"
+  languageName: unknown
+  linkType: soft
+
 "root-workspace-0b6124@workspace:.":
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."

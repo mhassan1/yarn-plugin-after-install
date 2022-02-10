@@ -13,7 +13,8 @@ export const executeAfterInstallHook = async (
   printPreamble: boolean
 ): Promise<number> => {
   const afterInstall = configuration.get('afterInstall')
-  const isDlx = process.argv[2] === 'dlx'
+  // https://github.com/yarnpkg/berry/blob/4f88b35c90695fb83c296b57f64cbf8dd2f88a9a/packages/plugin-dlx/sources/commands/dlx.ts#L47
+  const isDlx = !!configuration.projectCwd?.endsWith(`dlx-${process.pid}`)
   if (afterInstall && !isDlx) {
     if (printPreamble) {
       // TODO use a LightReport to write this to STDOUT, being careful to check for the `--json` flag from the user
