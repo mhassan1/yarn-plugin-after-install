@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.0] - 2023-05-22
+[0.4.0]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.3.1...v0.4.0
+
+- Skip `afterInstall` on `--mode update-lockfile`
+
 ## [0.3.1] - 2022-02-10
 [0.3.1]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.3.0...v0.3.1
 
