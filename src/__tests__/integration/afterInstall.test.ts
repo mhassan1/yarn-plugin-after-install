@@ -4,6 +4,7 @@ import { executeHelper, matchHelper } from './helpers'
 const COMMAND_YARN = 'yarn'
 const COMMAND_YARN_DLX = 'yarn dlx echo-cli sup'
 const COMMAND_YARN_DLX_WORKSPACE = 'yarn workspace my-workspace dlx echo-cli sup'
+const COMMAND_YARN_UPDATE_LOCKFILE = `yarn --mode update-lockfile`
 const COMMAND_YARN_AFTER_INSTALL = 'yarn after-install'
 
 describe.each([
@@ -88,6 +89,24 @@ describe.each([
   const cwd = join(__dirname, 'fixtures', 'test-package-failure')
 
   it('should run the `afterInstall` hook with a non-zero exit code', () => {
+    const executionResult = executeHelper(command, cwd)
+    matchHelper(executionResult, expectations)
+  })
+})
+
+describe.each([
+  {
+    command: COMMAND_YARN_UPDATE_LOCKFILE,
+    expectations: {
+      expectedStdout: /^$/,
+      expectedStderr: /^$/,
+      expectedExitCode: 0
+    }
+  }
+])('%s (skip)', ({ command, expectations }) => {
+  const cwd = join(__dirname, 'fixtures', 'test-package-failure')
+
+  it('should skip the `afterInstall` hook', () => {
     const executionResult = executeHelper(command, cwd)
     matchHelper(executionResult, expectations)
   })
