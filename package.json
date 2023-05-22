@@ -1,6 +1,6 @@
 {
   "name": "yarn-plugin-after-install",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Yarn Berry plugin that adds support for an `afterInstall` hook that runs after every `yarn install`",
   "main": "src/index.ts",
   "repository": {

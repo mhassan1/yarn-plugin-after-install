@@ -8,7 +8,7 @@ Inspired by https://github.com/GravitywellUK/yarn-plugin-postinstall.
 ## Install
 
 ```
-yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-after-install/v0.3.1/bundles/@yarnpkg/plugin-after-install.js
+yarn plugin import https://raw.githubusercontent.com/mhassan1/yarn-plugin-after-install/v0.4.0/bundles/@yarnpkg/plugin-after-install.js
 ```
 
 ## Usage
