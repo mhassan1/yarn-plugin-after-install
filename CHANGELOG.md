@@ -3,7 +3,7 @@
 ## [0.5.0] - 2023-06-05
 [0.5.0]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.4.0...v0.5.0
 
-- Drop support for `node < 16`
+- Bump dependencies
 
 ## [0.4.0] - 2023-05-22
 [0.4.0]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.3.1...v0.4.0
