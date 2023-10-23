@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.6.0] - 2023-10-23
+[0.6.0]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.5.0...v0.6.0
+
+- BREAKING: Upgrade to Yarn 4
+
 ## [0.5.0] - 2023-06-05
 [0.5.0]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.4.0...v0.5.0
 
