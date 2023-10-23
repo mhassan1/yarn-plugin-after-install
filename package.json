@@ -8,7 +8,7 @@
     "url": "git+https://github.com/mhassan1/yarn-plugin-after-install.git"
   },
   "engines": {
-    "yarn": "^3.0.0"
+    "yarn": "^4.0.0"
   },
   "keywords": [
     "yarn",
@@ -37,10 +37,10 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "@yarnpkg/builder": "^3.3.0",
-    "@yarnpkg/core": "^3.5.2",
-    "@yarnpkg/shell": "^3.2.5",
-    "clipanion": "3.2.0-rc.4"
+    "@yarnpkg/builder": "^4.0.0",
+    "@yarnpkg/core": "^4.0.0",
+    "@yarnpkg/shell": "^4.0.0",
+    "clipanion": "^4.0.0-rc.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
@@ -54,5 +54,5 @@
     "ts-jest": "^29.1.1",
     "typescript": "~5.1.6"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@4.0.0"
 }

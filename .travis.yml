@@ -9,4 +9,4 @@ dist: focal
 arch: arm64
 cache:
   directories:
-    - .yarn/cache
+    - $HOME/.yarn/berry/cache
