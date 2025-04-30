@@ -9,7 +9,11 @@ const plugin: Plugin = {
   commands: [AfterInstallCommand],
   hooks: {
     afterAllInstalled: async (project: Project, options?: InstallOptions): Promise<void> => {
-      if (options?.mode === InstallMode.UpdateLockfile) {
+      const afterInstallMode = project.configuration.get('afterInstallMode')
+      if (
+        options?.mode === InstallMode.UpdateLockfile ||
+        (options?.persistProject === false && afterInstallMode === 'persist-only')
+      ) {
         return
       }
 
