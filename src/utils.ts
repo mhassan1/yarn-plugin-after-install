@@ -21,7 +21,11 @@ export const executeAfterInstallHook = async (
       console.log('Running `afterInstall` hook...')
     }
     return execute(afterInstall, [], {
-      cwd: configuration.projectCwd || undefined
+      cwd: configuration.projectCwd || undefined,
+      env: {
+        ...process.env,
+        _YARN_PLUGIN_AFTER_INSTALL_COMMAND_ARGV: JSON.stringify(process.argv.slice(2))
+      }
     })
   }
   return 0

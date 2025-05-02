@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.7.0] - 2025-05-12
+[0.7.0]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.6.0...v0.7.0
+
+- Add support for `_YARN_PLUGIN_AFTER_INSTALL_COMMAND_ARGV`
+
 ## [0.6.0] - 2023-10-23
 [0.6.0]: https://github.com/mhassan1/yarn-plugin-after-install/compare/v0.5.0...v0.6.0
 

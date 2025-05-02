@@ -11,7 +11,7 @@ describe.each([
   {
     command: COMMAND_YARN,
     expectations: {
-      expectedStdoutToMatch: /Running `afterInstall` hook\.\.\.\nhi there/,
+      expectedStdoutToMatch: /Running `afterInstall` hook\.\.\.\nhi there\n\[\]\n/,
       expectedExitCode: 0
     }
   },
@@ -34,7 +34,7 @@ describe.each([
   {
     command: COMMAND_YARN_AFTER_INSTALL,
     expectations: {
-      expectedStdoutToMatch: /^hi there\n$/,
+      expectedStdoutToMatch: /^hi there\n\["after-install"\]\n$/,
       expectedExitCode: 0
     }
   }
