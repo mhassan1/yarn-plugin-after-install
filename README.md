@@ -23,6 +23,8 @@ afterInstall: do-something-awesome
 ```
 The script will run relative to the project directory (containing `.yarnrc.yml`).
 
+The script will be passed an environment variable (`_YARN_PLUGIN_AFTER_INSTALL_COMMAND_ARGV`) that contains a JSON array of arguments passed to `yarn` in the original command (for example, if the user runs `yarn install`, the script will be passed `_YARN_PLUGIN_AFTER_INSTALL_COMMAND_ARGV=["install"]`).
+
 2. Run `yarn`.
 
 ## Testing
