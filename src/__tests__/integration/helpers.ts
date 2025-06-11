@@ -25,10 +25,10 @@ export const matchHelper = (
   }: Expectations
 ): void => {
   expect(exitCode).toBe(expectedExitCode)
-  expectedStdoutToMatch && expect(stdout).toMatch(expectedStdoutToMatch)
-  expectedStdoutNotToMatch && expect(stdout).not.toMatch(expectedStdoutNotToMatch)
-  expectedStderrToMatch && expect(stderr).toMatch(expectedStderrToMatch)
-  expectedStderrNotToMatch && expect(stderr).not.toMatch(expectedStderrNotToMatch)
+  if (expectedStdoutToMatch) expect(stdout).toMatch(expectedStdoutToMatch)
+  if (expectedStdoutNotToMatch) expect(stdout).not.toMatch(expectedStdoutNotToMatch)
+  if (expectedStderrToMatch) expect(stderr).toMatch(expectedStderrToMatch)
+  if (expectedStderrNotToMatch) expect(stderr).not.toMatch(expectedStderrNotToMatch)
 }
 
 export const executeHelper = (command: string, cwd: string): ExecutionResult => {

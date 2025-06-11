@@ -3,7 +3,6 @@ import { execute } from '@yarnpkg/shell'
 
 /**
  * Execute the `afterInstall` hook
- *
  * @param {Configuration} configuration Configuration
  * @param {boolean} printPreamble Whether to print a preamble before execution
  * @returns {number} Exit code

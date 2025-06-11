@@ -8,7 +8,7 @@ const makeConfiguration = (afterInstall: string): Configuration =>
       return this.values.get(key)
     },
     values: new Map([['afterInstall', afterInstall]])
-  } as Configuration)
+  }) as Configuration
 
 describe('executeAfterInstallHook', () => {
   it('should execute an `afterInstall` hook with a zero exit code', async () => {
